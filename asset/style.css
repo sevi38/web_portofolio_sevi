@@ -1,0 +1,457 @@
+/* ==========================================
+   1. RESET & BASE STYLES
+   ========================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Background Utama: Gradasi Soft Pastel yang Sangat Halus */
+body {
+    background: linear-gradient(135deg, #fefdff 0%, #fdfcfc 100%);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(253, 230, 238, 0.6) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(224, 231, 255, 0.6) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(204, 251, 241, 0.5) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(243, 232, 255, 0.6) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: #52525b; /* Soft Charcoal */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #3f3f46;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #f472b6, #c084fc); /* Soft Pink to Violet */
+    margin: 8px auto 0;
+    border-radius: 10px;
+}
+
+/* ==========================================
+   2. HEADER & NAVIGATION
+   ========================================== */
+header {
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #3f3f46;
+}
+
+.logo span {
+    color: #c084fc; /* Pastel Lilac */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #71717a;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #c084fc;
+}
+
+/* ==========================================
+   3. HERO SECTION (ANIMASI GERAK PROFIL)
+   ========================================== */
+.hero-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap-reverse;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.subtitle {
+    color: #a1a1aa;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Nama Menonjol Soft Pink & Lilac */
+.highlight-name {
+    background: linear-gradient(135deg, #ec4899, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+/* Teks Mengetik */
+.typing-container {
+    font-size: 18px;
+    font-weight: 600;
+    color: #3f3f46;
+    margin-bottom: 15px;
+}
+
+#typing-text {
+    color: #906db1;
+}
+
+.cursor {
+    animation: blink 0.7s infinite;
+    color: #a855f7;
+    font-weight: 700;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hero-content h1 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #71717a;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 500px;
+}
+
+.hero-content h1 span {
+    color: #3f3f46;
+    font-weight: 600;
+}
+
+/* Efek Gambar Melayang (Floating) & Glowing Pastel Glow */
+.hero-image {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.img-wrapper {
+    position: relative;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, #fbcfe8, #e0e7ff, #99f6e4);
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
+    animation: float 4s ease-in-out infinite;
+}
+
+.img-wrapper img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    display: block;
+}
+
+/* Animasi Float */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Tombol Pastel Gradasi */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #f472b6, #c084fc);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(244, 114, 182, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(192, 132, 252, 0.4);
+}
+
+/* ==========================================
+   4. ABOUT & SKILLS SECTION
+   ========================================== */
+.about-section, .skills-section, .projects-section, .pkl-section, .education-section, .contact-section {
+    padding: 50px 0;
+}
+
+/* Card dengan efek Kaca Halus (Glassmorphism) */
+.about-text, .skill-card, .project-card, .pkl-content, .timeline-item, .contact-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.about-text {
+    padding: 25px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(192, 132, 252, 0.15);
+    border-color: #f3e8ff;
+}
+
+.skill-card h3 {
+    font-size: 16px;
+    color: #3f3f46;
+    margin-bottom: 6px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    color: #71717a;
+}
+
+/* ==========================================
+   5. PROJECTS SECTION
+   ========================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(244, 114, 182, 0.15);
+    border-color: #fce7f3;
+}
+
+.project-icon-box {
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fbf7ff;
+    border: 1px solid #f3e8ff;
+}
+
+.project-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.08);
+}
+
+.project-content h3 {
+    font-size: 16px;
+    color: #3f3f46;
+    margin-bottom: 4px;
+}
+
+.project-content p {
+    font-size: 13px;
+    color: #71717a;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   6. PKL & EDUCATION SECTION
+   ========================================== */
+.pkl-content {
+    padding: 25px;
+}
+
+.pkl-badge {
+    display: inline-block;
+    background: #ccfbf1; /* Pastel Soft Mint */
+    color: #0d9488;      /* Soft Teal Text */
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.pkl-date {
+    font-size: 13px;
+    color: #71717a;
+    margin-bottom: 10px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    padding: 20px;
+}
+
+.timeline-date {
+    font-size: 12px;
+    font-weight: 700;
+    color: #f472b6; /* Pastel Pink */
+    margin-bottom: 4px;
+}
+
+.timeline-content h3 {
+    font-size: 16px;
+    color: #3f3f46;
+    margin-bottom: 4px;
+}
+
+.timeline-content p {
+    font-size: 13px;
+    color: #71717a;
+}
+
+/* ==========================================
+   7. CONTACT & FOOTER SECTION
+   ========================================== */
+.contact-section {
+    text-align: center;
+}
+
+.contact-box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-details {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-card {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.contact-card:hover {
+    border-color: #f472b6;
+    background-color: rgba(253, 242, 248, 0.8);
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    color: #a1a1aa;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.footer-content p {
+    font-size: 13px;
+    margin: 2px 0;
+}
+
+.footer-content strong {
+    color: #52525b;
+}
+
+.footer-subtext {
+    font-size: 11px;
+    color: #a1a1aa;
+}
+
+/* ==========================================
+   8. ANIMASI SCROLL REVEAL
+   ========================================== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
