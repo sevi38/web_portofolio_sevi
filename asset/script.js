@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Efek Teks Mengetik Otomatis (Typing)
     // ==========================================
     const typingText = document.getElementById("typing-text");
-    const words = ["Web Developer", "Frontend Enthusiast", "Siswa RPL SMK Krian 1"];
+    const words = ["Web Developer", "Siswa RPL SMK Krian 1"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
